@@ -9,19 +9,15 @@ def calculateTemperature(farenheit, celsius):
     # offset is the constant value added / subtracted 
     OFFSET = 32
     
-    # User input
-    celsius_input = 21
-    farenheit_input = 45
-    
     # Conversions 
-    converted_to_farenheit = ((celsius_input) * CELSIUS_TO_FARENHEIT) + OFFSET 
-    converted_to_celcius = ((farenheit_input) - OFFSET) * FARENHEIT_TO_CELCIUS
+    converted_to_farenheit = (celsius * CELSIUS_TO_FARENHEIT) + OFFSET 
+    converted_to_celcius = (farenheit - OFFSET) * FARENHEIT_TO_CELCIUS
     
     return converted_to_farenheit, converted_to_celcius
 
 def displayResults(farenheit, celsius):
-    print(f"Celsius Results: {celsius}")
-    print(f"Farenheit Results: {farenheit}")
+    print(f"\n {farenheit:.2f}°F Converted to Celsius Result: {celsius:.2f}°C")
+    print(f"\n {celsius:.2f}°C Converted to Farenheit Result: {farenheit:.2f}°F")
     
     
 def main():
