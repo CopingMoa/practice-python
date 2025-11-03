@@ -1,0 +1,46 @@
+# SOLID and CLEAN Code
+
+# def calculate_temperature(celsius: float, fahrenheit: float) -> tuple[float, float]: - Helps understand what data types a function expects and returns. (input) -> (output)
+
+# Use a tuple when returning a small, fixed group of related values.
+  # Examples (concise)
+  # Coordinates → (x, y) or (x, y, z) — order matters (swapping changes meaning).
+  
+  # RGB color → (255, 0, 0) = red; change order → (0, 255, 0) = green.
+  
+  # Date/time parts → (year, month, day) — must stay in that order.
+  
+  # Function returns → (fahrenheit, celsius) — used with unpacking:
+
+
+
+# Use a list/array when data is many or changeable.
+    # Order matters (e.g., steps, sequences, rankings).
+    
+    # You want to loop in order (e.g., from first to last).
+    
+    # You don’t need labels — just positions.
+    
+    # Example:
+    
+    # steps = ["wake up", "eat", "study"]
+    # for step in steps:
+        print(step)
+
+    # Outputs in order: wake up → eat → study
+
+
+
+# Use a dict when you want readable keys.
+    # Use when: You need key–value pairs and fast lookup by name.
+    
+    # Mutable: You can add, remove, or change entries.
+    
+    # Best for: Labeled data, tracking states, or configurations.
+    
+    # todo = {"wake up": "done", "eat": "in progress", "study": "not started"}
+    # print(todo["eat"])  # Output: in progress
+    # todo["sleep"] = "pending"
+    # print(todo)
+
+    # {'wake up': 'done', 'eat': 'in progress', 'study': 'not started', 'sleep': 'pending'}
