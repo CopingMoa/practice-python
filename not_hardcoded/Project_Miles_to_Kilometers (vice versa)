@@ -1,1 +1,29 @@
+# Constants 
+OFFSET = 1.60934
 
+def calculate_miles_to_kilometers(miles):
+    conversion_miles_to_kilometers = (miles * OFFSET)
+    return conversion_miles_to_kilometers
+    
+def calculate_kilometers_to_miles(kilometers):
+    conversion_kilometers_to_miles = (kilometers / OFFSET)
+    return conversion_kilometers_to_miles
+
+def userInput():
+    input_miles = int(input("Enter a number for miles: "))
+    input_km = int(input("Enter a number for km: "))
+    return input_miles, input_km # return passes the result out of the function so other parts of the program can use it.
+
+
+def displayResults(input_miles, input_km, converted_to_km, converted_to_miles):
+    print(f"\n 12 km to {converted_to_miles:.2f} miles")
+    print(f"\n 13 miles to {converted_to_miles:.2f} km")
+
+
+def main():
+    input_miles, input_km = userInput() # storage 
+    converted_to_km = calculate_miles_to_kilometers(input_miles)
+    converted_to_miles = calculate_kilometers_to_miles(input_km)
+    displayResults(input_miles, input_km, converted_to_km, converted_to_miles)
+
+main()
