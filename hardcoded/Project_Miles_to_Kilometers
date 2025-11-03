@@ -1,1 +1,23 @@
-.
+# Hardcoded values
+# Constants 
+OFFSET = 1.60934
+
+def calculate_miles_to_kilometers(miles):
+    conversion_miles_to_kilometers = (miles * OFFSET)
+    return conversion_miles_to_kilometers
+    
+def calculate_kilometers_to_miles(kilometers):
+    conversion_kilometers_to_miles = (kilometers / OFFSET)
+    return conversion_kilometers_to_miles
+    
+def displayResults(converted_to_km, converted_to_miles):
+    print(f"\n 12 km to {converted_to_miles:.2f} miles")
+    print(f"\n 13 miles to {converted_to_miles:.2f} km")
+
+
+def main():
+    converted_to_km = calculate_miles_to_kilometers(12)
+    converted_to_miles = calculate_kilometers_to_miles(13)
+    displayResults(converted_to_km, converted_to_miles)
+
+main().
