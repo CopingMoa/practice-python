@@ -1,6 +1,9 @@
 # SOLID and CLEAN Code
 
+# TYPE HINT - just gives a warning (*yellow line) to catch the wrong values in the variables right away
 # def calculate_temperature(celsius: float, fahrenheit: float) -> tuple[float, float]: - Helps understand what data types a function expects and returns. (input) -> (output)
+
+
 
 # Use a tuple when returning a small, fixed group of related values.
   # Examples (concise)
