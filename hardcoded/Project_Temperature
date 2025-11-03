@@ -25,3 +25,11 @@ def main():
     displayResults(farenheit, celsius)
 
 main()
+
+
+# NOTE:
+    calculateTemperature(farenheit, celsius)
+    ~ Uses existing values to perform conversion.
+    
+    celsius, farenheit = userInput()
+    ~ Gets new values from the user and stores them into variables.
