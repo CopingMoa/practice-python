@@ -1,0 +1,31 @@
+
+def calculateTemperature(farenheit, celsius):
+    # Constants - values that will not change *hardcoded
+    FARENHEIT_TO_CELCIUS = 5 / 9
+    CELSIUS_TO_FARENHEIT = 9 / 5
+    
+    # f-strings are used in order for the programmer to not worry about the data types strictly
+    
+    # offset is the constant value added / subtracted 
+    OFFSET = 32
+    
+    # User input
+    celsius_input = 21
+    farenheit_input = 45
+    
+    # Conversions 
+    converted_to_farenheit = ((celsius_input) * CELSIUS_TO_FARENHEIT) + OFFSET 
+    converted_to_celcius = ((farenheit_input) - OFFSET) * FARENHEIT_TO_CELCIUS
+    
+    return converted_to_farenheit, converted_to_celcius
+
+def displayResults(farenheit, celsius):
+    print(f"Celsius Results: {celsius}")
+    print(f"Farenheit Results: {farenheit}")
+    
+    
+def main():
+    farenheit, celsius = calculateTemperature(21,45)
+    displayResults(farenheit, celsius)
+
+main()
