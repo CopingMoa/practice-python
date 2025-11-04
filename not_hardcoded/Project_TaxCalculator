@@ -2,7 +2,7 @@
 
 # Tax Calculator 
 # add projections how much I need to pay if doubled or tripled
-# base_income, tax_rate, / 100 ,taxed *
+
 
 class TaxCalculator:
     
@@ -24,6 +24,13 @@ class TaxCalculator:
         return doubled, tripled
 
     @staticmethod
+    def increaseIncome(base_income):
+        double_base_income = base_income * 2
+        triple_base_income = base_income * 3
+        return double_base_income, triple_base_income
+        
+    
+    @staticmethod
     def main():
         print("=" * 40 )
         print("Income Tax Calculator")
@@ -31,14 +38,22 @@ class TaxCalculator:
         
         base_income = TaxCalculator.userInput()
         tax_rate, taxed = TaxCalculator.taxCalculation(base_income)
-        tax_projections  = TaxCalculator.projections(taxed)
-        
-        print(f"Projections: {tax_projections}")
+        doubled, tripled  = TaxCalculator.projections(taxed)
+        double_base_income, triple_base_income = TaxCalculator.increaseIncome(base_income)
+
         print(f"Base Income: ${base_income:.3f}")
+        
+        print(f"Base Income (Doubled): {double_base_income:.2f}")
+        print(f"Base Income (Tripled): {triple_base_income:.2f}")
+        
         print(f"Tax Rate: {tax_rate:.0%}")
         print("-" * 40)
         print(f"Yearly Tax (Base): ${taxed:.2f}")
+        print(f"Yearly Tax (Doubled): ${doubled:.2f}")
+        print(f"Yearly Tax (Tripled): ${tripled:.2f}")
+        
         print("=" * 40 )
         
 if __name__ == "__main__":
      TaxCalculator.main()
+
