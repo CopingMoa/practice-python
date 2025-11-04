@@ -1,0 +1,49 @@
+list, tuples, sets, frozensets, dictionaries, none
+
+🧾 1. List ([])
+
+Use when: You need an ordered, changeable collection that may contain duplicates.
+
+Real use: Store items in a shopping cart, student grades, or search results.
+
+cart = ["apple", "banana", "apple"]
+
+🧱 2. Tuple (())
+
+Use when: You need an ordered but unchangeable collection of related data.
+
+Real use: Represent a fixed record like coordinates or a database row.
+
+user = ("Jy", 21, "Student")
+
+🧩 3. Set ({})
+
+Use when: You need a unique, unordered collection for fast membership checks.
+
+Real use: Keep unique tags, visited pages, or unique student IDs.
+
+visited = {"home", "about", "contact"}
+
+🧊 4. Frozenset
+
+Use when: You need a set that cannot be modified, often as a dictionary key or constant group.
+
+Real use: Define fixed permissions or categories.
+
+roles = frozenset(["read", "write"])
+
+📖 5. Dictionary ({key: value})
+
+Use when: You need key-value pairs for quick lookup and mapping.
+
+Real use: Store user profiles, settings, or inventory.
+
+user = {"name": "Jy", "age": 21, "role": "admin"}
+
+🚫 6. None
+
+Use when: You need to represent no value, missing data, or function that returns nothing.
+
+Real use: Indicate “not found”, uninitialized variable, or end of data.
+
+result = None
