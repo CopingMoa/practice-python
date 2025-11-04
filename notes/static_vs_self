@@ -1,0 +1,8 @@
+Static method: a tool 🪛
+
+It does the calculation but forgets after returning the result.
+
+
+Instance (self): a memory keeper 📦
+
+It stores the income, rate, and tax inside the object — so you can use or modify them later.
