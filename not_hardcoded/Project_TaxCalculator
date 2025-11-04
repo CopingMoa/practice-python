@@ -1,0 +1,44 @@
+#Without exception handling 0 will add later 
+
+# Tax Calculator 
+# add projections how much I need to pay if doubled or tripled
+# base_income, tax_rate, / 100 ,taxed *
+
+class TaxCalculator:
+    
+    @staticmethod
+    def userInput():
+        base_income : float = float(input("Enter the your income amount:  "))
+        return base_income
+    
+    @staticmethod
+    def taxCalculation(base_income):
+        tax_rate : float = float(input("Enter your tax rate percentage (%): ")) / 100
+        taxed : float = base_income * tax_rate
+        return(tax_rate, taxed)
+    
+    @staticmethod
+    def projections(taxed):
+        doubled = taxed * 2
+        tripled = taxed * 3
+        return doubled, tripled
+
+    @staticmethod
+    def main():
+        print("=" * 40 )
+        print("Income Tax Calculator")
+        print("=" * 40 )
+        
+        base_income = TaxCalculator.userInput()
+        tax_rate, taxed = TaxCalculator.taxCalculation(base_income)
+        tax_projections  = TaxCalculator.projections(taxed)
+        
+        print(f"Projections: {tax_projections}")
+        print(f"Base Income: ${base_income:.3f}")
+        print(f"Tax Rate: {tax_rate:.0%}")
+        print("-" * 40)
+        print(f"Yearly Tax (Base): ${taxed:.2f}")
+        print("=" * 40 )
+        
+if __name__ == "__main__":
+     TaxCalculator.main()
