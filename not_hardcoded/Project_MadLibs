@@ -1,1 +1,9 @@
+print('RESUME GENERATOR')
+name:str = input("Enter your name: ")
+experience:str = input("Enter your years of experience: ")
+skills:str = input("Enter your key skills (comma separated): ")
 
+story_sentence : str = f''' \nI'm {name}, a Detail-oriented and motivated learner with a growing proficiency in programming and problem-solving. Passionate about developing clean, efficient code and continuously improving technical and analytical skills. Demonstrates adaptability, curiosity, and a strong commitment to learning new technologies and approaches. I have {experience} years of experience in programming and have worked on a wide range of projects, including web development, mobile app development, and data analysis. Skilled in a wide range of programming languages, frameworks, and tools. My key skills include {skills}. I am eager to contribute my skills and enthusiasm to a dynamic team and continue growing as a developer. '''
+
+
+print("\nResume:", story_sentence)
