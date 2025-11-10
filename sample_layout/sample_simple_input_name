@@ -1,0 +1,13 @@
+def final_input():
+    user_input = str(input('Enter your name: '))
+    return user_input
+    
+
+def main():
+    user_input_storage = final_input()
+    print(f'Hi {user_input_storage}')
+
+main()
+    
+
+    
