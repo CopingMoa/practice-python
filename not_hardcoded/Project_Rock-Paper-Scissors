@@ -1,0 +1,32 @@
+import random
+
+#dictionary
+symbol_options: dict[str, str] = {"rock" : '🪨', "paper": '📄', "scissors":'✂️'}
+
+#player_choice
+player_options: str = input("Enter a rock(🪨), paper(📄) or scissors (✂️): ").lower().strip()
+
+#computer_choice
+computer_options = random.choice(list(symbol_options.keys()))
+
+def options(player_options:str, computer_options:str)-> str:
+    if player_options == computer_options:
+        return 'Stalemate'
+    elif (player_options == 'rock' and computer_options == 'paper') or (player_options == 'paper' and computer_options == 'scissors') or (player_options == 'scissors' and computer_options == 'rock'):
+        return 'Computer Won!'
+    else:
+        return 'Player Won!'
+        
+def print_outcome(player_options:str, computer_options:str, final_result:str):
+    print(f"\nYour choice: {player_options} \nComputer's Choice: {computer_options}")
+    print(f"\n The outcome is {final_result}")
+    
+def main():
+    final_result = options(player_options, computer_options)
+    print_outcome(player_options,computer_options,final_result)
+    
+main()
+
+    
+    
+    
