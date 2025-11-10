@@ -4,7 +4,7 @@ import random
 symbol_options: dict[str, str] = {"rock" : '🪨', "paper": '📄', "scissors":'✂️'}
 
 #player_choice
-player_options: str = input("Enter a rock(🪨), paper(📄) or scissors (✂️): ").lower().strip()
+player_options: str = str(input("Enter a rock(🪨), paper(📄) or scissors (✂️): ")).lower().strip()
 
 #computer_choice
 computer_options = random.choice(list(symbol_options.keys()))
@@ -18,8 +18,8 @@ def options(player_options:str, computer_options:str)-> str:
         return 'Player Won!'
         
 def print_outcome(player_options:str, computer_options:str, final_result:str):
-    print(f"\nYour choice: {player_options} \nComputer's Choice: {computer_options}")
-    print(f"\n The outcome is {final_result}")
+    print(f"\nYour choice: {symbol_options[player_options]} \nComputer's Choice: {symbol_options[computer_options]}")
+    print(f"\n The Outcome is: {final_result}")
     
 def main():
     final_result = options(player_options, computer_options)
