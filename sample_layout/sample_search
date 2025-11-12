@@ -1,0 +1,11 @@
+
+def find_user(username:str, db:dict[str,int]):
+    if username in db:
+        print(f'{username} found!')
+    else:
+        print(f'username not found')
+    
+
+db:dict[str,int] = {'Dave',1}
+
+find_user('Dave', db)
