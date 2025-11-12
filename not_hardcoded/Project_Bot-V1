@@ -1,1 +1,29 @@
+from datetime import datetime
 
+# purpose: 
+def database_terms(terms:list[str], content:str)-> bool:
+    matches: list[bool] = []
+    for term in terms:
+        #as long as may words na nasa sentence , kahit may inadd ka, marerecognize pa din yung specific words
+        matches.append(term in content.lower())
+         
+         #any is a built in function that returns true as long as it contains something
+    return any(matches)
+
+
+def response(text:str) -> str:
+    text = text.lower()
+    
+    if database_terms(['hello','hi'], text):
+        return 'Hi!'
+    
+def conversation_layout():
+    while True:
+        user_input:str = str(input('User: '))
+        print(f'Bot: {response(user_input)}')
+        
+def main():
+    conversation_layout()
+
+main()
+    
