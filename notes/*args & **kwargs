@@ -60,4 +60,6 @@ print(build_path("users", "downloads", "file.txt"))
 
 print(merge_names("Joan", "Jill"))
 
+print_settings: dict[str,str] = {'sep':', ', 'end': '!\n'}
 
+print('John', 'Karl', **print_settings)
