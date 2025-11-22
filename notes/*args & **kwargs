@@ -1,0 +1,63 @@
+
+people: list[str] = ['Bob', 'James']
+settings: dict[str,int | str]  = {'volume':99}
+parts: list[str]=['part1', 'part2']
+# There can only be one *args
+def greet_all(greeting, *names):
+    for name in names:
+        print(f"{greeting}, {name}!")
+
+def greet(*people:str, greeting:str  = 'Hello') -> None:
+    for person in people:
+        print(f"{person}, {greeting}")
+
+def setup(version:str, **kwargs) -> None:
+    print('Version:', version)
+    print('Settings:', kwargs)
+    
+    if 'volume' in kwargs.keys():
+        print(f'Volume set to: {kwargs.get("volume")}')
+        
+
+def build_path(*parts):
+    return "/".join(parts)
+    
+def merge_names(*names):
+    return ", ".join(names) + "."
+    
+def merge_names(*names: str) -> str:
+    """
+    Merge multiple names into a single string, separating with commas,
+    adding 'and' before the last name, and ending with a period.
+    
+    Args:
+        *names: Variable number of string names.
+    
+    Returns:
+        str: Nicely formatted string of names.
+    """
+    if not names:
+        return ""
+    if len(names) == 1:
+        return f"{names[0]}."
+    if len(names) == 2:
+        return f"{names[0]} and {names[1]}."
+    # For 3 or more names
+    return f"{', '.join(names[:-1])}, and {names[-1]}."
+
+
+# greet_all("Hi", "Alice", "Bob") 
+
+# #unpack yung people list then ggmiting yung greet()
+# greet(*people)
+
+# # key word sep to separate words and using end to put . in the end 
+# print(*people, sep=', ', end='.\n')
+
+setup('2.0', **settings)
+
+print(build_path("users", "downloads", "file.txt"))
+
+print(merge_names("Joan", "Jill"))
+
+
