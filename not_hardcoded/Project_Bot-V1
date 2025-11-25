@@ -1,6 +1,5 @@
 from datetime import datetime
 
-# purpose: 
 def database_terms(terms:list[str], content:str)-> bool:
     matches: list[bool] = []
     for term in terms:
@@ -10,18 +9,46 @@ def database_terms(terms:list[str], content:str)-> bool:
          #any is a built in function that returns true as long as it contains something
     return any(matches)
 
-
+# 1) lowers the strings
+# 2) removes leading and trailing spaces
+# 3) text_normalized removing the spaces
+#response() → decides reply
 def response(text:str) -> str:
-    text = text.lower()
     
+
+    # " " SEARCHES for all spaces 
+    # "" REPLACES the spaces with nothing
+    text= text.lower().strip().replace(" ", "")
+    
+    #checks kung yung text 
+    if  text == "":
+        return 'You must input a valid text'
+    
+    # isdigit() detecting if the string is numeric-only
+    if text.isdigit():
+        return "Numbers are not valid input."
+
     if database_terms(['hello','hi'], text):
         return 'Hi!'
+        
+    if database_terms(['idonotloveyou','idon\'tloveyou'], text):
+        return 'Why? Did I do something wrong?'
     
+    if database_terms(['iloveyou'], text):
+        return 'Why do you love me?'
+
+    
+#conversation_layout() → manages conversation
 def conversation_layout():
     while True:
         user_input:str = str(input('User: '))
+        
+        if user_input.lower().strip() == "exit" or "quit":
+            print(f'Bot: End of the Chat')
+            break
         print(f'Bot: {response(user_input)}')
         
+
 def main():
     conversation_layout()
 
