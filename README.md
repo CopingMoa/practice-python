@@ -1,7 +1,7 @@
 # PracticePython
-### Repository: Beginner Java Projects Collection
+### Repository: Beginner Python Projects Collection
 
-A collection of small Java projects demonstrating core programming concepts such as user input handling, conditionals, loops, and basic algorithmic thinking.
+A collection of small Python projects demonstrating core programming concepts such as user input handling, conditionals, loops, and basic algorithmic thinking.
 
 ---
 
